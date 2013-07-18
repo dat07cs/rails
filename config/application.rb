@@ -4,7 +4,9 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(:default, Rails.env)
+if defined?(Bundler)
+  Bundler.require(:default, :assets, Rails.env)
+end
 
 module Getstart
   class Application < Rails::Application
